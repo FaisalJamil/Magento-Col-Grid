@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Myns_Addcolumns>
+            <version>0.4.0</version>
+        </Myns_Addcolumns>
+    </modules>
+    <global>
+        <models>
+            <Myns_Addcolumns>
+                <class>Myns_Addcolumns_Model</class>
+            </Myns_Addcolumns>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <core_block_abstract_prepare_layout_before>
+                <observers>
+                    <Addcolumns_column_append>
+                        <type>model</type>
+                        <class>Myns_Addcolumns_Model_Observer</class>
+                        <method>appendCustomColumn</method>
+                    </Addcolumns_column_append>
+                </observers>
+            </core_block_abstract_prepare_layout_before>
+        </events>
+    </adminhtml>
+</config>
